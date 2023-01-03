@@ -1,19 +1,28 @@
-#include<stdio.h>
-int addNumbers(int n1,int n2);
-int main()
-{
-  int num1, num2, sum;
+#include <stdio.h>
 
-  printf("\nEnter two numbers:");
-  scanf("%d %d", &num1, &num2);
+int input();
+int add(int a, int b);
+void output(int a, int b, int sum);
 
-  sum = addNumbers(num1, num2);
-  printf("\nSum = %d",sum);
+int input(){
+    int a, b;
+    printf("Enter two numbers : ");
+    scanf("%d %d", &a, &b);
+    return a, b;
+}
+int add(int a, int b){
+    int sum;
+    sum = a + b;
+    return sum;
+}
 
-  return 0;
-  }
-int addNumbers(int n1, int n2)
-{
-  int res;
-  res = n1 + n2;
+void output(int a, int b, int sum){
+    printf("The sum of %d and %d is %d \n", a, b, sum);
+}
+int main(){
+    int a, b;
+    int sum;
+    a, b = input();
+    sum = add(a, b);
+    output(a, b, sum);
 }
